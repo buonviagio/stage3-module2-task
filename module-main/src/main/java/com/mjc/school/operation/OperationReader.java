@@ -3,7 +3,6 @@ package com.mjc.school.operation;
 import com.mjc.school.controller.RequestFromModuleMain;
 import com.mjc.school.exception.CommandNotFoundException;
 import com.mjc.school.exception.NotNumberException;
-import com.mjc.school.service.exceptions.ErrorCodes;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -102,7 +101,7 @@ public class OperationReader {
         if (input.matches("\\d*")) {
             return input;
         } else {
-            throw new NotNumberException(String.format(ErrorCodes.VALID_NUMBER_VALUE.toString(), input));
+            throw new NotNumberException(String.format("%s should be number", input));
         }
     }
 }
