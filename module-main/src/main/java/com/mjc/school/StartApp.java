@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
-@Component
+@Component//("startApp")
 public class StartApp {
     private OperationEngine operationEngine;
     @Autowired
