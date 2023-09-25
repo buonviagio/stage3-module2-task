@@ -28,6 +28,14 @@ subprojects {
 
         annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
         implementation "org.mapstruct:mapstruct:$mapstructVersion"
+
+        compileOnly 'org.projectlombok:lombok:1.18.28'
+        annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+        // https://mvnrepository.com/artifact/org.springframework/spring-aspects
+        implementation 'org.springframework:spring-aspects:6.0.12'
+
+
     }
     test {
         useJUnitPlatform()
