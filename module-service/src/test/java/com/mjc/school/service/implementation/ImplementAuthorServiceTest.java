@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
-@SpringJUnitConfig
+@SpringJUnitConfig(ImplementAuthorServiceTest.SpringConfigurationTest.class)
 class ImplementAuthorServiceTest {
     Random random = new Random();
     @Autowired
@@ -25,20 +25,16 @@ class ImplementAuthorServiceTest {
         List<NewsDtoResponse> readAllList = newsService.readAll();
 
         for (NewsDtoResponse news : readAllList) {
-            System.out.println(news);
+            assertTrue(news.getAuthorId().toString().matches("\\d*"));
+            assertFalse(news.getName().isEmpty());
+            assertFalse(news.getContent().isEmpty());
+            assertEquals(news.getCreateDate(), news.getLastUpdateDate());
         }
-
-        assertFalse(readAllList.isEmpty());
-
     }
 
 
     @Configuration
-    @EnableAspectJAutoProxy(proxyTargetClass = true)
-    @ComponentScan(basePackages = {
-            "com.mjc.school.service",
-            "com.mjc.school.repository",
-    })
+    @ComponentScan(basePackages = "com.mjc.school")
     static class SpringConfigurationTest {
 
     }

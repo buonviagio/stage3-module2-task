@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AuthorData {
-    private static final String AUTHOR_NAMES = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/authors";
+    //private static final String AUTHOR_NAMES = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/authors";
+    private static final String AUTHOR_NAMES = "authors";
     private static AuthorData authorData;
     private List<AuthorModel> authorlist;
     private Utils utils = Utils.getInstance();

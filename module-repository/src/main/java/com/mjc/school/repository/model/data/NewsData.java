@@ -10,8 +10,10 @@ import java.util.List;
 import java.util.Random;
 
 public class NewsData {
-    private static final String CONTENT_FILE_NAME = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/news";
-    private static final String NEWS_FILE_NAME = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/content";
+    //private static final String CONTENT_FILE_NAME = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/news";
+    private static final String CONTENT_FILE_NAME = "news";
+    //private static final String NEWS_FILE_NAME = "/Users/DimaHeinz/Desktop/test/stage3-module2-task/module-repository/src/main/resources/content";
+    private static final String NEWS_FILE_NAME = "content";
     private static NewsData newsData;
     private List<NewsModel> newsList;
     private Utils utils = Utils.getInstance();
