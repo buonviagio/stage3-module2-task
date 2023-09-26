@@ -2,6 +2,7 @@ package com.mjc.school.repository.utils;
 
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public class DataSource {
     private List<NewsModel> newsList;
     private List<AuthorModel> authorList;
     private static DataSource dataSource;
-
+    @Autowired
     private DataSource() {
         authorList = getAuthorData().getAuthorlist();
         newsList = getNewsData(authorList).getNewsList();

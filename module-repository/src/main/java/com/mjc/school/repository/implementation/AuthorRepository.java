@@ -4,6 +4,7 @@ import com.mjc.school.repository.BaseRepository;
 import com.mjc.school.repository.annotations.DeleteNews;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.utils.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -16,7 +17,7 @@ import java.util.Optional;
 @Repository
 public class AuthorRepository implements BaseRepository<AuthorModel, Long> {
     private DataSource dataSource;
-
+    @Autowired
     public AuthorRepository() {
         dataSource = DataSource.getInstance();
     }

@@ -1,5 +1,6 @@
 package com.mjc.school.controller.implementation;
 
+import com.mjc.school.controller.BaseController;
 import com.mjc.school.controller.annotations.CommandHandler;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
@@ -14,9 +15,11 @@ import java.util.Map;
 @Component
 public class Controller {
     @Autowired
-    private AuthorController authorController;
+    private BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController;
+    //private AuthorController authorController;
     @Autowired
-    private NewsController newsController;
+    private BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController;
+    //private NewsController newsController;
 
     @CommandHandler(operation = "1")
     public String getNews(RequestFromModuleMain request) {

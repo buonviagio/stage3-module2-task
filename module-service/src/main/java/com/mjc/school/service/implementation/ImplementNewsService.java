@@ -1,5 +1,6 @@
 package com.mjc.school.service.implementation;
 
+import com.mjc.school.repository.BaseRepository;
 import com.mjc.school.repository.implementation.NewsRepository;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.service.BaseService;
@@ -17,10 +18,10 @@ import java.util.Optional;
 @Service
 public class ImplementNewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
 
-    private final NewsRepository repository;
+    private final BaseRepository<NewsModel, Long> repository;
     ModelMapper mapper = ModelMapper.INSTANCE;
     @Autowired
-    public ImplementNewsService(NewsRepository repository) {
+    public ImplementNewsService(BaseRepository<NewsModel, Long> repository) {
         this.repository = repository;
     }
 

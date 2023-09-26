@@ -1,5 +1,6 @@
 package com.mjc.school.service.implementation;
 
+import com.mjc.school.repository.BaseRepository;
 import com.mjc.school.repository.implementation.AuthorRepository;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.service.BaseService;
@@ -7,6 +8,8 @@ import com.mjc.school.service.ModelMapper;
 import com.mjc.school.service.annotations.Validate;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
+import com.mjc.school.service.dto.DtoRequest;
+import com.mjc.school.service.dto.DtoResponse;
 import com.mjc.school.service.exceptions.ErrorCodes;
 import com.mjc.school.service.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +21,10 @@ import java.util.Optional;
 
 @Service
 public class ImplementAuthorService implements BaseService<AuthorDtoRequest, AuthorDtoResponse, Long> {
-    private final AuthorRepository repository;
+    private final BaseRepository<AuthorModel, Long> repository;
 
     @Autowired
-    public ImplementAuthorService(AuthorRepository repository) {
+    public ImplementAuthorService(BaseRepository<AuthorModel, Long> repository) {
         this.repository = repository;
     }
 

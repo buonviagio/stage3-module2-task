@@ -1,6 +1,7 @@
 package com.mjc.school.controller.implementation;
 
 import com.mjc.school.controller.BaseController;
+import com.mjc.school.service.BaseService;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exceptions.CheckException;
@@ -13,9 +14,9 @@ import java.util.List;
 @Component
 public class NewsController implements BaseController<NewsDtoRequest, NewsDtoResponse, Long> {
 
-    private final ImplementNewsService newsService;
+    private final BaseService<NewsDtoRequest, NewsDtoResponse, Long> newsService;
     @Autowired
-    public NewsController(ImplementNewsService newsService) {
+    public NewsController(BaseService<NewsDtoRequest, NewsDtoResponse, Long> newsService) {
         this.newsService = newsService;
     }
 
