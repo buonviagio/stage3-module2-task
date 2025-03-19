@@ -19,23 +19,19 @@ public interface ModelMapper {
 
     List<AuthorDtoResponse> modelListToDtoListAuthors(List<AuthorModel> authorModelList);
 
-    /*@Mappings({
-            @Mapping(target = "createDate", ignore = true),
-            @Mapping(target = "lastUpdateDate", ignore = true)
-    })*/
     NewsDtoResponse modelToDtoNews(NewsModel baseEntity);
 
     AuthorDtoResponse modelToDtoAuthor(AuthorModel baseEntity);
 
-    /*@Mappings({
+    @Mappings({
             @Mapping(target = "createDate", ignore = true),
             @Mapping(target = "lastUpdateDate", ignore = true)
-    })*/
+    })
     NewsModel dtoToModelNews(NewsDtoRequest dtoRequest);
 
-    /*@Mappings({
+    @Mappings({
             @Mapping(target = "createDate", ignore = true),
             @Mapping(target = "lastUpdateDate", ignore = true)
-    })*/
+    })
     AuthorModel dtoToModelAuthor(AuthorDtoRequest dtoRequest);
 }
