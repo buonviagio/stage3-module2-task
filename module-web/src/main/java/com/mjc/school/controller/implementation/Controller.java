@@ -24,7 +24,6 @@ public class Controller {
     @CommandHandler(operation = "1")
     public String getNews(RequestFromModuleMain request) {
         return printNews(newsController.readAll().toArray(new NewsDtoResponse[0]));
-
     }
 
 
