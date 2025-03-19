@@ -3,8 +3,6 @@ package com.mjc.school.operation;
 import com.mjc.school.controller.command.*;
 import com.mjc.school.exception.CommandNotFoundException;
 import com.mjc.school.exception.NotNumberException;
-import com.mjc.school.service.dto.AuthorDtoRequest;
-import com.mjc.school.service.dto.NewsDtoRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -77,7 +75,7 @@ public class OperationReader {
         return new DeleteAuthorByIdCommand(Long.parseLong(id));
     }
 
-    private Command<NewsDtoRequest> createNews(Scanner scanner) {
+    private Command<?> createNews(Scanner scanner) {
         System.out.println("Operation: Create news.");
         String title = readString(scanner, "news", "title");
         String content = readString(scanner, "news", "content");
@@ -85,13 +83,13 @@ public class OperationReader {
         return new CreateNewsCommand(title, content, authorId);
     }
 
-    private Command<AuthorDtoRequest> createAuthor(Scanner scanner) {
+    private Command<?> createAuthor(Scanner scanner) {
         System.out.println("Operation: Create author.");
         String name = readString(scanner, "author", "name");
         return new CreateAuthorCommand(name);
     }
 
-    private Command<NewsDtoRequest> updateNews(Scanner scanner) {
+    private Command<?> updateNews(Scanner scanner) {
         System.out.println("Operation: Update news.");
         Long newsId =  Long.parseLong(readNumber(scanner, "newsId"));
         String title = readString(scanner, "news", "title");
@@ -100,7 +98,7 @@ public class OperationReader {
         return new UpdateNewsCommand(newsId, title, content, authorId);
     }
 
-    private Command<AuthorDtoRequest> updateAuthor(Scanner scanner) {
+    private Command<?> updateAuthor(Scanner scanner) {
         System.out.println("Operation: Update author.");
         Map<String, String> map = new HashMap<>();
         Long authorId = Long.parseLong(readNumber(scanner, "author"));

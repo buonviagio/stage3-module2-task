@@ -4,15 +4,15 @@ import com.mjc.school.exception.CommandNotFoundException;
 
 public enum Operations {
     GET_ALL_NEWS("Get all news", "1"),
-    GET_ALL_AUTHORS("Get all authors.", "2"),
-    GET_NEWS_BY_ID("Get news by id.", "3"),
-    GET_AUTHOR_BY_ID("Get author by id.", "4"),
-    CREATE_NEWS("Create news.", "5"),
-    CREATE_AUTHOR("Create author.", "6"),
-    UPDATE_NEWS("Update news.", "7"),
-    UPDATE_AUTHORS("Update authors.", "8"),
-    REMOVE_NEWS_BY_ID("Remove news by id.", "9"),
-    REMOVE_AUTHOR_BY_ID("Remove author by id.", "10"),
+    GET_ALL_AUTHORS("Get all authors", "2"),
+    GET_NEWS_BY_ID("Get news by id", "3"),
+    GET_AUTHOR_BY_ID("Get author by id", "4"),
+    CREATE_NEWS("Create news", "5"),
+    CREATE_AUTHOR("Create author", "6"),
+    UPDATE_NEWS("Update news", "7"),
+    UPDATE_AUTHORS("Update authors", "8"),
+    REMOVE_NEWS_BY_ID("Remove news by id", "9"),
+    REMOVE_AUTHOR_BY_ID("Remove author by id", "10"),
     EXIT("Exit", "0");
 
     private String command;

@@ -42,7 +42,7 @@ public class OperationEngine {
     public void runOperations(String str, Scanner scanner) {
         try {
             Operations operations = Operations.getCommand(str);
-            System.out.println("operations ====> " + operations);
+            //System.out.println("operations ====> " + operations);
             Command<?> command = operationReader.readCommandParameters(operations, scanner);
             execute(operations, command);
         } catch (CommandNotFoundException | NotNumberException e) {
